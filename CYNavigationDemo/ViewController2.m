@@ -26,6 +26,14 @@
     self.navigationbar = [self standardNavigationbar];
     self.navigationbar.title.text = @"子页";
     [self.navigationbar.leftBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationbar.rightBtn setTitle:@"下一页" forState:UIControlStateNormal];
+    [self.navigationbar.rightBtn addTarget:self action:@selector(next) forControlEvents:
+     UIControlEventTouchUpInside];
+}
+
+- (void)next{
+    ViewController2 *vc = [[ViewController2 alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)back{

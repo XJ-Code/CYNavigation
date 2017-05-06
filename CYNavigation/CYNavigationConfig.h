@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef UIPanGestureRecognizer *(^backBlock)();
+
 @interface CYNavigationConfig : NSObject
 /** bar的高度 */
 @property(assign , nonatomic) CGFloat height;
@@ -32,7 +34,7 @@
 /** 其他字体 */
 @property(strong , nonatomic) UIFont *outherFont;
 /** 返回拖动手势(默认为左侧侧滑) */
-@property (nonatomic,strong) UIPanGestureRecognizer *backGesture;
+@property (nonatomic,strong) backBlock backGesture;
 /** 过渡动画类型 */
 @property (nonatomic,assign) Class transitionAnimationClass;
 

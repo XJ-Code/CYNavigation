@@ -32,7 +32,7 @@ static const char backGesture_Key ;
     [self.view layoutIfNeeded];
     UIPanGestureRecognizer *gesture = objc_getAssociatedObject(self, &backGesture_Key);
     if (!gesture) {
-        gesture = [CYNavigationConfig shared].backGesture;
+        gesture = [CYNavigationConfig shared].backGesture();
         [self.view addGestureRecognizer:gesture];
         objc_setAssociatedObject(self, &backGesture_Key, gesture, OBJC_ASSOCIATION_ASSIGN);
     }

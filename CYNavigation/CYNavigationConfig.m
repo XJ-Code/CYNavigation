@@ -43,8 +43,11 @@
         config.outherFont = [UIFont systemFontOfSize:17.0];
         
         //返回驱动手势
-        config.backGesture = [[UIScreenEdgePanGestureRecognizer alloc]init];
-        [(UIScreenEdgePanGestureRecognizer *)(config.backGesture) setEdges:UIRectEdgeLeft];
+        config.backGesture = ^UIPanGestureRecognizer *{
+            UIScreenEdgePanGestureRecognizer *gesture = [[UIScreenEdgePanGestureRecognizer alloc]init];
+            [gesture setEdges:UIRectEdgeLeft];
+            return gesture;
+        };
         
         //过渡动画类型
         config.transitionAnimationClass = NSClassFromString(@"NormalTransitionAnimation");

@@ -24,7 +24,9 @@
     [CYNavigationConfig shared].fontColor = [UIColor whiteColor];
     [CYNavigationConfig shared].leftBtnImageColor = [UIColor redColor];
     [CYNavigationConfig shared].borderHeight = 0.5;
-    [CYNavigationConfig shared].backGesture = [[UIPanGestureRecognizer alloc]init];//全屏返回
+    [CYNavigationConfig shared].backGesture = ^UIPanGestureRecognizer *{
+        return [[UIPanGestureRecognizer alloc]init];
+    }; //全屏返回
     [CYNavigationConfig shared].transitionAnimationClass = NSClassFromString(@"HighlightTransitionAnimation");//凸显的过渡动画
     
     ViewController *vc = [[ViewController alloc]init];
